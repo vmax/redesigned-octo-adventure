@@ -4,4 +4,5 @@ metadata:
   name: abc
   namespace: default
 data:
-  x: y
+  player_initial_lives: "3"
+  ui_properties_file_name: "user-interface.properties"
