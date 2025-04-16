@@ -14,13 +14,13 @@ spec:
             clusterUrl: https://kubernetes.default.svc
             project: dev
             releaseName: ammana
-            targetRevision: master
+            targetRevision: main
           - env: dev
             namespace: cln-dev
             clusterUrl: https://kubernetes.default.svc
             project: dev
             releaseName: ceyloan
-            targetRevision: master
+            targetRevision: main
   template:
     metadata:
       name: "alerts-{{releaseName}}-{{env}}"
