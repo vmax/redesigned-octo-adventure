@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: abc
   namespace: default
-stringData:
+data:
   x: y
