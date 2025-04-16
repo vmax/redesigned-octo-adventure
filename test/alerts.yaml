@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: alerts
+spec:
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+  generators:
+    - list:
+        elements:
+          - env: dev
+            namespace: amn-dev
+            clusterUrl: https://kubernetes.default.svc
+            project: dev
+            releaseName: ammana
+            targetRevision: master
+          - env: dev
+            namespace: cln-dev
+            clusterUrl: https://kubernetes.default.svc
+            project: dev
+            releaseName: ceyloan
+            targetRevision: master
+  template:
+    metadata:
+      name: "alerts-{{releaseName}}-{{env}}"
+      namespace: argocd
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
+    spec:
+      destination:
+        namespace: "{{namespace}}"
+        server: "{{clusterUrl}}"
+      project: "{{project}}"
+      sources:
+        - directory:
+            recurse: true
+          path: "{{env}}/{{releaseName}}"
+          repoURL: https://github.com/vmax/redesigned-octo-adventure.git
+          targetRevision: "{{targetRevision}}"
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+
