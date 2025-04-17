@@ -32,7 +32,7 @@ spec:
             clusterUrl: https://kubernetes.default.svc
             project: dev
             releaseName: trustpaisa
-            targetRevision: master
+            targetRevision: main
   template:
     metadata:
       name: "alerts-{{releaseName}}-{{env}}"
