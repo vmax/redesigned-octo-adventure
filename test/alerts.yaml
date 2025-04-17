@@ -39,6 +39,9 @@ spec:
           repoURL: https://github.com/vmax/redesigned-octo-adventure.git
           targetRevision: "{{targetRevision}}"
       syncPolicy:
+        automated:
+          prune: false
+          selfHeal: false
         syncOptions:
           - CreateNamespace=true
 
