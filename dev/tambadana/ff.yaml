@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: tmb-dev
+  name: oooopp
+stringData:
+  xqs: asd
