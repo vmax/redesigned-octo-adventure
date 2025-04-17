@@ -21,6 +21,12 @@ spec:
             project: dev
             releaseName: ceyloan
             targetRevision: main
+          - env: dev
+            namespace: tmb-dev
+            clusterUrl: https://kubernetes.default.svc
+            project: dev
+            releaseName: tambadana
+            targetRevision: main
   template:
     metadata:
       name: "alerts-{{releaseName}}-{{env}}"
