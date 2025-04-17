@@ -27,6 +27,12 @@ spec:
             project: dev
             releaseName: tambadana
             targetRevision: main
+          - env: dev
+            namespace: tpa-dev
+            clusterUrl: https://kubernetes.default.svc
+            project: dev
+            releaseName: trustpaisa
+            targetRevision: master
   template:
     metadata:
       name: "alerts-{{releaseName}}-{{env}}"
